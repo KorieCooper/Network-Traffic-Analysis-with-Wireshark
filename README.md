@@ -17,6 +17,16 @@ Full lab report:  <br/>
 <a href="Lab%201%20Traffic%20Analysis.pdf">Lab 1 Traffic Analysis.pdf</a>
 <br />
 <br />
+### TODO (Completed)
+
+I followed each step in sequence:
+
+1. Opened Wireshark on **External / Attacker Kali** and listened on interface `eth0`.
+2. Kept Wireshark running in the background in **External / Attacker Kali** while performing the subsequent tasks (3 and 4).
+3. Opened a new terminal in Attacker Kali, then pinged the Ubuntu VM for 5–10 seconds, stopping the ping with `CTRL + C`.
+4. Opened a new web browser in Attacker Kali (even though no webpage was displayed) and kept it open for a couple of seconds.
+5. Stopped capturing by clicking the **red button** on the toolbar.
+6. Saved the pcap file in the root folder in the External/Attacker Kali.
 
 <b>Step 1:</b> Setting up the segmented lab network with Kali, Ubuntu, and pfSense VMs. <br/>
 <img src="step%201.png" height="80%" width="80%" alt="Traffic Analysis Part A Step 1"/>
