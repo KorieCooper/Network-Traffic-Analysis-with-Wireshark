@@ -58,28 +58,49 @@ I followed each step in sequence:
 <br />
 <br />
 
+### Task B – Sniff ICMP Traffic 
 
-<b>Part B — Step 1:</b> Setting up an FTP session between hosts on the network. <br/>
+a) Connected to the following VMs in Hyper-V Manager:
+   - Attacker/External Kali
+   - Internal Kali
+   - pfSense
+   - Ubuntu
+
+b) Launched and ran Wireshark in **Internal Kali**.
+
+c) Opened two terminals on the **External Kali VM** — used one to ping the Ubuntu VM, and the other to ping Internal Kali.
+
+d) Applied a proper display/capture filter in Wireshark on **Internal Kali VM** to show active ICMP traffic.
+
+e) Applied a proper display/capture filter on the Internal Kali VM that ONLY displayed the ICMP request that originated from the External Kali VM and went to the Ubuntu 64-bit VM.
+
+
+<b>Part B — Step 1:</b> Started packet capture in Internal Kali. <br/>
 <img src="PART%20B%20STEP%201.png" height="80%" width="80%" alt="Traffic Analysis Part B Step 1"/>
 <br />
 <br />
 
-<b>Part B — Step 2:</b> Capturing the FTP session in Wireshark. <br/>
+<b>Part B — Step 2:</b> Opened two terminals in External Kali to ping the Ubuntu VM and Internal VM. <br/>
 <img src="PART%20B%20STEP%202.png" height="80%" width="80%" alt="Traffic Analysis Part B Step 2"/>
 <br />
 <br />
 
-<b>Part B — Step 3:</b> Filtering the capture for FTP protocol traffic. <br/>
+<b>Part B — Step 3:</b> Applied an ICMP filter in Wireshark on Internal Kali to show active traffic. <br/>
 <img src="PART%20B%20STEP%203.png" height="80%" width="80%" alt="Traffic Analysis Part B Step 3"/>
 <br />
 <br />
 
-<b>Part B — Step 4:</b> Following the FTP stream to inspect the full session. <br/>
+<b>Part B — Step 4:</b> Set a filter to only show traffic from External Kali to the Ubuntu VM. <br/>
 <img src="PART%20B%20STEP%204.png" height="80%" width="80%" alt="Traffic Analysis Part B Step 4"/>
 <br />
 <br />
 
-<b>Part B — Step 5:</b> Locating the plaintext username in the stream. <br/>
+### Part B — Part 2
+
+Ubuntu VM is also serving as an FTP server inside the LAN network. Now, you need to use External Kali to access this FTP server by using the command:
+`ftp [ip_addr of ubuntu VM]`. The username for the FTP server is `student`, and the password is `password`. You can follow the steps below to access the FTP server.
+
+<b>Part B — Step 5:</b> Attempting to log into FTP server. <br/>
 <img src="PART%20B%20STEP%205.png" height="80%" width="80%" alt="Traffic Analysis Part B Step 5"/>
 <br />
 <br />
@@ -89,12 +110,12 @@ I followed each step in sequence:
 <br />
 <br />
 
-<b>Part B — Step 7:</b> Documenting the credential exposure as a finding. <br/>
+<b>Part B — Step 7:</b> Signing in with another account to test. <br/>
 <img src="PART%20B%20STEP%207.png" height="80%" width="80%" alt="Traffic Analysis Part B Step 7"/>
 <br />
 <br />
 
-<b>Part B — Step 8:</b> Recommending FTPS/SFTP and segmentation as mitigations. <br/>
+<b>Part B — Step 8:</b> Locating the plaintext password in the stream. <br/>
 <img src="PART%20B%20STEP%208.png" height="80%" width="80%" alt="Traffic Analysis Part B Step 8"/>
 <br />
 <br />
