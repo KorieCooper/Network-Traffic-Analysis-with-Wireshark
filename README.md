@@ -28,35 +28,36 @@ I followed each step in sequence:
 5. Stopped capturing by clicking the **red button** on the toolbar.
 6. Saved the pcap file in the root folder in the External/Attacker Kali.
 
-<b>Step 1:</b> Setting up the segmented lab network with Kali, Ubuntu, and pfSense VMs. <br/>
+<b>Step 1:</b> Checked how many packets were captured. <br/>
 <img src="step%201.png" height="80%" width="80%" alt="Traffic Analysis Part A Step 1"/>
 <br />
 <br />
 
-<b>Step 2:</b> Enabling port mirroring on pfSense to capture LAN traffic. <br/>
+<b>Step 2:</b> Applied an ICMP filter to see how many packets were ICMP. <br/>
 <img src="Step%202.png" height="80%" width="80%" alt="Traffic Analysis Part A Step 2"/>
 <br />
 <br />
 
-<b>Step 3:</b> Capturing packets in Wireshark and filtering for ICMP traffic. <br/>
+<b>Step 3:</b> Selected an ICMP Echo Reply packet to find the source and destination IP. <br/>
 <img src="STEP%203.png" height="80%" width="80%" alt="Traffic Analysis Part A Step 3"/>
 <br />
 <br />
 
-<b>Step 4:</b> Tracing DNS queries and responses in the capture. <br/>
+<b>Step 4:</b> Applied a DNS filter to see how many packets were displayed. <br/>
 <img src="STEP%204.png" height="80%" width="80%" alt="Traffic Analysis Part A Step 4"/>
 <br />
 <br />
 
-<b>Step 5:</b> Reviewing captured traffic for anomalies. <br/>
+<b>Step 5:</b> Found a DNS query to Amazon and looked it up in the browser to find the source and destination IP. <br/>
 <img src="STEP%205.png" height="80%" width="80%" alt="Traffic Analysis Part A Step 5"/>
 <br />
 <br />
 
-<b>Step 6:</b> Confirming visibility into cross-VLAN traffic via the mirrored port. <br/>
+<b>Step 6:</b> Found a DNS response from Amazon and looked it up in the browser to find the source and destination IP. <br/>
 <img src="STEP%206.png" height="80%" width="80%" alt="Traffic Analysis Part A Step 6"/>
 <br />
 <br />
+
 
 <b>Part B — Step 1:</b> Setting up an FTP session between hosts on the network. <br/>
 <img src="PART%20B%20STEP%201.png" height="80%" width="80%" alt="Traffic Analysis Part B Step 1"/>
